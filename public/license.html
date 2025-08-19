@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudoku Hatchling</title>
+  <title>License - Sudoku Hatchling</title>
   <link rel="icon" type="image/png" href="sudoku_logo.png"/>
   <style>
     body {
@@ -44,29 +44,37 @@
 
     .container {
       max-width: 900px;
-      margin: 2rem auto;
+      margin: 40px auto;
       padding: 20px;
     }
 
-    .guide-section {
-      background: #fff;
+    .license-card {
+      background: #f9f9f9;
       border: 1px solid #eee;
-      border-left: 5px solid #FFD72E;
-      padding: 20px 25px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .guide-section:hover {
-      transform: translateY(-2px);
-    }
-
-    .guide-section h2 {
+    .license-card h2 {
+      color: #FFD72E;
       margin-top: 0;
+      font-size: 24px;
+    }
+
+    .license-card p {
+      margin: 12px 0;
+    }
+
+    .license-card a {
       color: #000;
-      font-size: 1.4rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid #FFD72E;
+    }
+
+    .license-card a:hover {
+      color: #FFD72E;
     }
 
     footer {
@@ -94,10 +102,31 @@
   </nav>
 
   <div class="container">
-    
+    <div class="license-card">
+      <h2>License</h2>
+      <p>
+        <strong>Design:</strong> <br>
+        "Sudoku Hatchling – A Sudoku Game Mobile App" 
+        <a href="https://www.figma.com/community/file/1441704364549292105/sudoku-hatchling-a-sudoku-game-mobile-app-community" target="_blank">
+          by Jeric Eduarte on Figma
+        </a>
+      </p>
+      <p>
+        <strong>Source Code:</strong> <br>
+        Developed by 
+        <a href="https://github.com/einsitang/sudoku-flutter" target="_blank">
+          einsitang on GitHub
+        </a>
+      </p>
+      <p>
+        <strong>Contact:</strong> <br>
+        For collaboration or inquiries, please contact:  
+        <a href="mailto:nexstudio.up@gmail.com">nexstudio.up@gmail.com</a>
+      </p>
+    </div>
   </div>
 
-<footer>
+  <footer>
     <p>© 2025 Sudoku Hatchling. All Rights Reserved. | Contact: 
       <a href="mailto:nexstudio.up@gmail.com">nexstudio.up@gmail.com</a>
     </p>
