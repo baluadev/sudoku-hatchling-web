@@ -1,106 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudoku Hatchling</title>
-  <link rel="icon" type="image/png" href="sudoku_logo.png"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #fff;
-      color: #222;
-      line-height: 1.6;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku Hatchling</title>
+    <link rel="icon" type="image/png" href="sudoku_logo.png" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #fff;
+        color: #222;
+        line-height: 1.6;
+      }
 
-    header {
-      background: #000;
-      color: #FFD72E;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+      header {
+        background: #000;
+        color: #ffd72e;
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
 
-    nav {
-      background: #FFD72E;
-      padding: 0.8rem;
-      text-align: center;
-    }
+      nav {
+        background: #ffd72e;
+        padding: 0.8rem;
+        text-align: center;
+      }
 
-    nav a {
-      color: #000;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+      nav a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
 
-    nav a:hover {
-      color: #fff;
-    }
+      nav a:hover {
+        color: #fff;
+      }
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 20px;
-    }
+      .container {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 20px;
+      }
 
-    .guide-section {
-      background: #fff;
-      border: 1px solid #eee;
-      border-left: 5px solid #FFD72E;
-      padding: 20px 25px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
+      .hero {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
 
-    .guide-section:hover {
-      transform: translateY(-2px);
-    }
+      .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.5rem;
+        color: #000;
+      }
 
-    .guide-section h2 {
-      margin-top: 0;
-      color: #000;
-      font-size: 1.4rem;
-    }
+      .hero p {
+        font-size: 1.1rem;
+        color: #444;
+      }
 
-    footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 15px 10px;
-      margin-top: 50px;
-    }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 2rem;
+      }
 
-    footer a {
-      color: #FFD72E;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <header>Sudoku Hatchling</header>
+      .feature-card {
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+      }
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="guide.html">How to Play</a>
-    <a href="policy.html">Policy & Term</a>
-    <a href="license.html">License</a>
-  </nav>
+      .feature-card:hover {
+        transform: translateY(-4px);
+      }
 
-  <div class="container">
-    
-  </div>
+      .feature-card h3 {
+        margin-top: 0;
+        color: #000;
+      }
 
-<footer>
-    <p>© 2025 Sudoku Hatchling. All Rights Reserved. | Contact: 
-      <a href="mailto:nexstudio.up@gmail.com">nexstudio.up@gmail.com</a>
-    </p>
-  </footer>
-</body>
+      .levels {
+        margin-top: 3rem;
+        text-align: center;
+      }
+
+      .level-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+      }
+
+      .level-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border: 2px solid #eee;
+        padding: 8px 14px;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        font-weight: 600;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+      }
+
+      .level-badge:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .level-icon {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+      }
+
+      .leaderboard {
+        margin-top: 3rem;
+      }
+
+      .leaderboard h2 {
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      table th,
+      table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+      }
+
+      table th {
+        background: #ffd72e;
+      }
+
+      footer {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 15px 10px;
+        margin-top: 50px;
+      }
+
+      footer a {
+        color: #ffd72e;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Sudoku Hatchling</header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="guide.html">How to Play</a>
+      <a href="policy.html">Policies & Terms</a>
+      <a href="license.html">License</a>
+    </nav>
+
+    <div class="container">
+      <section class="hero">
+        <h1>Sharpen Your Mind with Sudoku Hatchling</h1>
+        <p>
+          The classic puzzle game reimagined with modern design and endless
+          challenges.
+        </p>
+      </section>
+
+      <section class="features">
+        <div class="feature-card">
+          <h3>5 Levels</h3>
+          <p>Eggshell, Cracked, Chick, Fledgeling, Wise Owl.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Smart Hints</h3>
+          <p>Use tips wisely to crack tougher puzzles.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Track Progress</h3>
+          <p>Statistics for time, mistakes, win rate.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Play Anywhere</h3>
+          <p>Offline mode for when you’re on the go.</p>
+        </div>
+      </section>
+
+      <section class="levels">
+        <h2>Difficulty Levels</h2>
+        <div class="level-badges">
+          <span class="level-badge">
+            <img src="lv1.png" alt="Eggshell" class="level-icon" />
+            Eggshell
+          </span>
+          <span class="level-badge">
+            <img src="lv2.png" alt="Cracked" class="level-icon" />
+            Cracked
+          </span>
+          <span class="level-badge">
+            <img src="lv3.png" alt="Chick" class="level-icon" />
+            Chick
+          </span>
+          <span class="level-badge">
+            <img
+              src="lv4.png"
+              alt="Fledgeling"
+              class="level-icon"
+            />
+            Fledgeling
+          </span>
+          <span class="level-badge">
+            <img src="lv5.png" alt="Wise Owl" class="level-icon" />
+            Wise Owl
+          </span>
+        </div>
+      </section>
+
+      <section class="leaderboard">
+        <h2>🏆 Leaderboard Preview</h2>
+        <table id="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Stars</th>
+              <th>Win Rate</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <script>
+        async function loadLeaderboard() {
+          const res = await fetch(
+            "https://leaderboard2-oa74jn4bxa-uc.a.run.app"
+          );
+          const data = await res.json();
+
+          if (data.success) {
+            const tbody = document.querySelector("#leaderboard-table tbody");
+            tbody.innerHTML = "";
+            data.list.forEach((player) => {
+              tbody.innerHTML += `
+          <tr>
+            <td>${player.rank}</td>
+            <td>${player.name ?? "Anonymous"}</td>
+            <td>${player.stars}</td>
+            <td>${player.winRate ?? "-"}%</td>
+          </tr>
+        `;
+            });
+          }
+        }
+        loadLeaderboard();
+      </script>
+    </div>
+
+    <footer>
+      <p>
+        © 2025 Sudoku Hatchling | Contact:
+        <a href="mailto:nexstudio.up@gmail.com">nexstudio.up@gmail.com</a>
+      </p>
+    </footer>
+  </body>
 </html>

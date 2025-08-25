@@ -1,156 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sudoku Hatchling</title>
-  <link rel="icon" type="image/png" href="sudoku_logo.png"/>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #fff;
-      color: #222;
-      line-height: 1.6;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sudoku Hatchling</title>
+    <link rel="icon" type="image/png" href="sudoku_logo.png" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #fff;
+        color: #222;
+        line-height: 1.6;
+      }
 
-    header {
-      background: #000;
-      color: #FFD72E;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 1.8rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+      header {
+        background: #000;
+        color: #ffd72e;
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 1.8rem;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
 
-    nav {
-      background: #FFD72E;
-      padding: 0.8rem;
-      text-align: center;
-    }
+      nav {
+        background: #ffd72e;
+        padding: 0.8rem;
+        text-align: center;
+      }
 
-    nav a {
-      color: #000;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
+      nav a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
 
-    nav a:hover {
-      color: #fff;
-    }
+      nav a:hover {
+        color: #fff;
+      }
 
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 20px;
-    }
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 20px;
+      }
 
-    .guide-section {
-      background: #fff;
-      border: 1px solid #eee;
-      border-left: 5px solid #FFD72E;
-      padding: 20px 25px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
-    }
+      .guide-section {
+        background: #fff;
+        border: 1px solid #eee;
+        border-left: 5px solid #ffd72e;
+        padding: 20px 25px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+      }
 
-    .guide-section:hover {
-      transform: translateY(-2px);
-    }
+      .guide-section:hover {
+        transform: translateY(-2px);
+      }
 
-    .guide-section h2 {
-      margin-top: 0;
-      color: #000;
-      font-size: 1.4rem;
-    }
+      .guide-section h2 {
+        margin-top: 0;
+        color: #000;
+        font-size: 1.4rem;
+      }
 
-    footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 15px 10px;
-      margin-top: 50px;
-    }
+      .level-icon {
+        padding: 8px 12px;
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+      }
 
-    footer a {
-      color: #FFD72E;
-      text-decoration: none;
-    }
-  </style>
-</head>
-<body>
-  <header>Sudoku Hatchling</header>
+      footer {
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 15px 10px;
+        margin-top: 50px;
+      }
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="guide.html">How to Play</a>
-    <a href="policy.html">Policy & Term</a>
-    <a href="license.html">License</a>
-  </nav>
+      footer a {
+        color: #ffd72e;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Sudoku Hatchling</header>
 
-  <div class="container">
-    <div class="guide-section">
-      <h2>Welcome to Sudoku Hatchling</h2>
-      <p><strong>Sudoku Hatchling</strong> is a fun and engaging puzzle game that takes you on a journey from egg to owl mastery! Solve Sudoku challenges, crack daily rewards, and grow your skills across levels designed for players of all ages and abilities.</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="guide.html">How to Play</a>
+      <a href="policy.html">Policies & Terms</a>
+      <a href="license.html">License</a>
+    </nav>
+
+    <div class="container">
+      <div class="guide-section">
+        <h2>Welcome to Sudoku Hatchling</h2>
+        <p>
+          <strong>Sudoku Hatchling</strong> is a fun and engaging puzzle game
+          that takes you on a journey from egg to owl mastery! Solve Sudoku
+          challenges, crack daily rewards, and grow your skills across levels
+          designed for players of all ages and abilities.
+        </p>
+      </div>
+
+      <div class="guide-section">
+        <h2>1. Enter Your Name</h2>
+        <p>
+          Before choosing a level, enter your name to personalize your
+          experience.
+        </p>
+      </div>
+
+      <div class="guide-section">
+        <h2>2. Choose a Level</h2>
+        <p>Select from the following levels:</p>
+        <ul style="list-style: none; padding: 0">
+          <li style="display: flex; align-items: center; margin-bottom: 10px">
+            <img src="lv1.png" alt="Eggshell" class="level-icon" />
+            <span>  Eggshell (Beginner)</span>
+          </li>
+          <li style="display: flex; align-items: center; margin-bottom: 10px">
+            <img src="lv2.png" alt="Cracked" class="level-icon" />
+            <span>  Cracked Egg (Easy)</span>
+          </li>
+          <li style="display: flex; align-items: center; margin-bottom: 10px">
+            <img src="lv3.png" alt="Chick" class="level-icon" />
+            <span>  Chick (Intermediate)</span>
+          </li>
+          <li style="display: flex; align-items: center; margin-bottom: 10px">
+            <img src="lv4.png" alt="Wise Owl" class="level-icon" />
+            <span>  Fledgling (Advanced)</span>
+          </li>
+          <li style="display: flex; align-items: center; margin-bottom: 10px">
+             <img src="lv5.png" alt="Wise Owl" class="level-icon" />
+            <span>  Wise Owl (Expert)</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="guide-section">
+        <h2>3. Start the Puzzle</h2>
+        <p>
+          Each Sudoku board has <strong>9×9 boxes</strong> divided into smaller
+          3×3 grids. Some boxes already have numbers filled in for you.
+        </p>
+      </div>
+
+      <div class="guide-section">
+        <h2>4. Fill the Empty Boxes</h2>
+        <p>
+          Tap on an empty box, then choose a number (1–9) from the options
+          below. Make sure every row, column, and 3×3 grid contains each number
+          only once.
+        </p>
+      </div>
+
+      <div class="guide-section">
+        <h2>5. Earn Hints by Hunting Eggs</h2>
+        <p>
+          Look for the <em>Hunt the Egg</em> icon on the board. To collect the
+          egg, complete the entire row where the egg is located. Each egg can be
+          exchanged for a helpful hint!
+        </p>
+      </div>
+
+      <div class="guide-section">
+        <h2>6. Complete the Puzzle</h2>
+        <p>
+          Keep going until every box is filled correctly — congratulations,
+          you’ve cracked the challenge!
+        </p>
+      </div>
     </div>
 
-    <div class="guide-section">
-      <h2>1. Enter Your Name</h2>
-      <p>Before choosing a level, enter your name to personalize your experience.</p>
-    </div>
-
-    <div class="guide-section">
-      <h2>2. Choose a Level</h2>
-      <p>Select from the following levels:</p>
-      <ul>
-        <li>🥚 Eggshell (Beginner)</li>
-        <li>🌱 Cracked Egg (Easy)</li>
-        <li>🐥 Chick (Intermediate)</li>
-        <li>🪶 Fledgling (Advanced)</li>
-        <li>🦉 Wise Owl (Expert)</li>
-      </ul>
-    </div>
-
-    <div class="guide-section">
-      <h2>3. Start the Puzzle</h2>
-      <p>Each Sudoku board has <strong>9×9 boxes</strong> divided into smaller 3×3 grids. Some boxes already have numbers filled in for you.</p>
-    </div>
-
-    <div class="guide-section">
-      <h2>4. Fill the Empty Boxes</h2>
-      <p>Tap on an empty box, then choose a number (1–9) from the options below. Make sure every row, column, and 3×3 grid contains each number only once.</p>
-    </div>
-
-    <div class="guide-section">
-      <h2>5. Earn Hints by Hunting Eggs</h2>
-      <p>Look for the <em>Hunt the Egg</em> icon on the board. To collect the egg, complete the entire row where the egg is located. Each egg can be exchanged for a helpful hint!</p>
-    </div>
-
-    <div class="guide-section">
-      <h2>6. Check Your Progress</h2>
-      <p>Click the <strong>3 dots menu</strong> at the top of the screen and select <em>Check Progress</em> to review your performance and correct mistakes.</p>
-    </div>
-
-    <div class="guide-section">
-      <h2>7. Complete 10 Stages per Level</h2>
-      <p>Each level has <strong>10 stages</strong>. Complete them all to finish the level. The puzzles get progressively more challenging!</p>
-    </div>
-
-    <div class="guide-section">
-      <h2>8. Complete the Puzzle</h2>
-      <p>Keep going until every box is filled correctly — congratulations, you’ve cracked the challenge!</p>
-    </div>
-  </div>
-
- <footer>
-    <p>© 2025 Sudoku Hatchling. All Rights Reserved. | Contact: 
-      <a href="mailto:nexstudio.up@gmail.com">nexstudio.up@gmail.com</a>
-    </p>
-  </footer>
-</body>
+    <footer>
+      <p>
+        © 2025 Sudoku Hatchling | Contact:
+        <a href="mailto:nexstudio.up@gmail.com">nexstudio.up@gmail.com</a>
+      </p>
+    </footer>
+  </body>
 </html>
